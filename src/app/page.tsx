@@ -1,11 +1,21 @@
+'use client';
 import Image from 'next/image'
 import styles from './page.module.css'
-import Radio from './Radio'
+import Radio from './Radio';
+import { styled } from 'styled-components';
 
 export default function Home() {
+  const Title = styled.h1`
+    color: blue;
+    display: flex;
+    align-text: center;
+    flex-direction: column;
+    justify-content: center;
+  `;
+
   return (
     <main className={styles.main}>
-      <h1>Radio</h1>
+      <Title>Radio</Title>
       <Radio />
     </main>
   )

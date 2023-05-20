@@ -3166,6 +3166,16 @@ queue-microtask@^1.2.2:
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+radio-browser-api@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/radio-browser-api/-/radio-browser-api-6.0.1.tgz#86c3943d0dac1216131cc76ee652087790b69caa"
+  integrity sha512-7QzW1rjB/6CFmk2UOBMLo4dW15R0yj2OpuftKlYXWQ1ow7leeOfNvAD3HRN5gFl1E3oxqtcocr2TfyaxqQ4oSg==
+
+radio-browser@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/radio-browser/-/radio-browser-2.2.3.tgz#2bc85f9ec7cf7aee0b03e0dff2788f0b3d21deb2"
+  integrity sha512-nfBHaCvnAdo/HX5mli7hOeo069+6qhhHt7u7PHmArnYfnQqTFsT1i6JLNvPkkIIfavlHtmU+dKFIAP8asxiriQ==
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"

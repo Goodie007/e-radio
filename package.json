@@ -15,6 +15,8 @@
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "next": "13.4.2",
+    "radio-browser": "^2.2.3",
+    "radio-browser-api": "^6.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-h5-audio-player": "^3.8.6",
