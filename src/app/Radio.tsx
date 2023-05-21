@@ -5,7 +5,7 @@ import { styled } from 'styled-components';
 import AudioPlayer from 'react-h5-audio-player';
 import "react-h5-audio-player/lib/styles.css";
 import { RadioBrowserApi } from 'radio-browser-api';
-//import RadioPic from '@/assets/images/RadioPic';
+import RadioPic from '@/assets/images/RadioPic';
 
 const radioPic = require("../assets/images/radio.png")
 
@@ -29,8 +29,15 @@ export default function Radio(){
             tag: filterStations,
             limit: 30,
         })
+        .then(data => {
+            return data
+        })
 
         return stations;
+    }
+
+    const setDefaultSrc = (e: any) => {
+        e.target.src = RadioPic
     }
 
     //const setRadio = async (filterStations: string) => {
@@ -82,21 +89,29 @@ export default function Radio(){
             <div>
                 {stations && stations.map((i: any, d: any) => {
                     return (
-                        <div key={i}>
+                        <><div key={i}>
                             <div>
-                                <image src={radioPic}  />
+                                <image 
+                                    src={i.favicon} 
+                                    alt="default"
+                                    onError={setDefaultSrc}
+                                />
                             </div>
                             <div>{i.name}</div>
                         </div>
+                        <AudioPlayer
+                            autoPlay
+                            src={i.urlResolved}
+                            onPlay={_e => console.log("onPlay")}
+                            showJumpControls={false}
+                            layout='stacked'
+                            customProgressBarSection={[]}
+                            autoPlayAfterSrcChange={false}
+                         />
+                        </>
                     )
                 })}
             </div>
-            <AudioPlayer
-                autoPlay
-                src={stations.urlResolved}
-                onPlay={e => console.log("onPlay")}
-                // other props here
-            />
         </div>
     )
 }
