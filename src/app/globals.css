@@ -34,6 +34,8 @@
     #00000080
   );
 
+
+
   --callout-rgb: 238, 240, 241;
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
@@ -71,6 +73,19 @@
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
+}
+
+span {
+  margin: 0.25em;
+  border: 1px solid #e36bae;
+  border-radius: 10px;
+  padding: 0.25em 0.75em;
+
+}
+
+span:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom right, #e36bae, #fb743e);
 }
 
 * {
