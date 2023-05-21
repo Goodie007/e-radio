@@ -9,7 +9,7 @@ export default function Home() {
     color: blue;
     display: flex;
     align-text: center;
-    flex-direction: column;
+    ailign-items: center;
     justify-content: center;
   `;
 

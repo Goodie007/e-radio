@@ -6,6 +6,8 @@ import AudioPlayer from 'react-h5-audio-player';
 import "react-h5-audio-player/lib/styles.css";
 import { RadioBrowserApi } from 'radio-browser-api';
 import RadioPic from '@/assets/images/RadioPic';
+import styles from './page.module.css';
+import './radio.css';
 
 const radioPic = require("../assets/images/radio.png")
 
@@ -75,29 +77,51 @@ export default function Radio(){
     const Button = styled.h1`
         color: red;
     `;
+
+    const Wrapper = styled.section`
+       
+        width: 100%;
+    `
+    const Filter = styled.div`
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 2em;
+        font-size: 1.2rem;
+        width: 100%;
+    `
+    const Stations = styled.div`
+         display: grid;
+         grid-template-columns: repeat(3, 33%);
+         width: 100%;
+    `;
+
     return (
-        <div>
-            <Button>hello</Button>
-            <div>
+        <Wrapper>
+            <Filter>
                {filters.map((filter, v) => (
                 // eslint-disable-next-line react/jsx-key
                 <span
-                    className={filterStations === filter ? "selected" : ""}
-                    onClick={() => setFilterStations(filter)}>{filter}</span>
+                   className={filterStations === filter ? "selected" : ""}
+                   //className={styles.span}
+                    onClick={() => setFilterStations(filter)}>
+                        {filter}
+                </span>
                ))}
-            </div>
-            <div>
+            </Filter>
+            <Stations>
                 {stations && stations.map((i: any, d: any) => {
                     return (
-                        <><div key={i}>
-                            <div>
+                        <><div className='station' key={i}>
+                            <div className='stationName'>
                                 <image 
                                     src={i.favicon} 
                                     alt="default"
                                     onError={setDefaultSrc}
+                                    className='img'
                                 />
                             </div>
-                            <div>{i.name}</div>
+                            <div className='name'>{i.name}</div>
                         </div>
                         <AudioPlayer
                             autoPlay
@@ -106,12 +130,14 @@ export default function Radio(){
                             showJumpControls={false}
                             layout='stacked'
                             customProgressBarSection={[]}
-                            autoPlayAfterSrcChange={false}
+                            autoPlayAfterSrcChange={false} 
+                            customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
+                            className={styles.audioPlayer}
                          />
                         </>
                     )
                 })}
-            </div>
-        </div>
+            </Stations>
+        </Wrapper>
     )
 }
