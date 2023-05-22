@@ -79,8 +79,12 @@ export default function Radio(){
     `;
 
     const Wrapper = styled.section`
-       
+       max-width: 60em;
         width: 100%;
+
+        @media(max-width) {
+            width: 100%;
+        }
     `
     const Filter = styled.div`
         display: flex;
@@ -89,6 +93,13 @@ export default function Radio(){
         margin-bottom: 2em;
         font-size: 1.2rem;
         width: 100%;
+
+        @media(max-width: 700px) {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            font-size: 14px;
+        }
     `
     const Stations = styled.div`
          display: grid;
@@ -112,7 +123,8 @@ export default function Radio(){
             <Stations>
                 {stations && stations.map((i: any, d: any) => {
                     return (
-                        <><div className='station' key={i}>
+                        <div className='station' key={i} >
+                            <div>
                             <div className='stationName'>
                                 <image 
                                     src={i.favicon} 
@@ -132,9 +144,9 @@ export default function Radio(){
                             customProgressBarSection={[]}
                             autoPlayAfterSrcChange={false} 
                             customControlsSection={["MAIN_CONTROLS", "VOLUME_CONTROLS"]}
-                            className={styles.audioPlayer}
+                            className="audioPlayer"
                          />
-                        </>
+                        </div>
                     )
                 })}
             </Stations>
