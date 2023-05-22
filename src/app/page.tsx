@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Radio from './Radio';
 import { styled } from 'styled-components';
+import Login from './Login';
 
 export default function Home() {
   const Title = styled.h1`
@@ -15,7 +16,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Radio />
+      <Login />
     </main>
   )
 }
