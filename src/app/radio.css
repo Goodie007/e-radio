@@ -67,6 +67,10 @@ span {
     padding: 0.25em 0.75em;
   }
 
+  .smallWrapper {
+    text-align: start;
+  }
+
  /* Mobile */
 @media (max-width: 700px) {
   

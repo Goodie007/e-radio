@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Radio from './Radio';
 import { styled } from 'styled-components';
 import Login from './Login';
+import SignUp from './SignUp';
 
 export default function Home() {
   const Title = styled.h1`
@@ -16,7 +17,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Login />
+      <SignUp />
     </main>
   )
 }

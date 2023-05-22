@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import './radio.css'
 
-export default function Login(){
+export default function SignUp(){
     const Title = styled.h1`
         text-align: center;
         padding-top: 0rem;
@@ -83,15 +83,15 @@ export default function Login(){
 
     return (
         <div>
-            <Title>Login</Title>
+            <Title>Sign Up</Title>
             <InputWrapper>
                 <Input placeholder='Name' />
                 <Input placeholder='Password' type='password' />
                 <div>
-                    <SmallText>Forgot password?</SmallText>
+                    <SmallText>Sign up with google</SmallText>
                 </div>
-                <Login>Login</Login>
-                <SmallText>Don't have an account? <SignUp> sign up here </SignUp></SmallText>
+                <Login>Submit</Login>
+                <SmallText>Already have an account? <SignUp>Login</SignUp></SmallText>
             </InputWrapper>
         </div>
     )
