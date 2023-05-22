@@ -1,18 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+
 span {
     margin: 0.25em;
     border: 1px solid #e36bae;
     border-radius: 10px;
     padding: 0.25em 0.75em;
+    color: white;
   
   }
   
   span:hover {
     cursor: pointer;
     background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    color: black;
   }
 
   .selected {
     background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    color: black;
   }
   .station {
     font-size: 1.2em;
@@ -24,11 +30,11 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
   
-    &:hover {
+    .station:hover {
       border-color: #e36bae;
     }
-  }
 
   .stationName {
     display: flex;
@@ -52,3 +58,34 @@ span {
     border: 2px solid rgb(76, 62, 95);
     margin: 0 0.25em;
   }
+
+  .audioPlayer {
+    background-color: #9C0D38;
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+    padding: 0.25em 0.75em;
+  }
+
+ /* Mobile */
+@media (max-width: 700px) {
+  
+span {
+  border: 1px solid #e36bae;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+
+}
+
+span:hover {
+  cursor: pointer;
+  background: linear-gradient(to bottom right, #e36bae, #fb743e);
+  color: black;
+}
+
+.selected {
+  background: linear-gradient(to bottom right, #e36bae, #fb743e);
+  color: black;
+}
+}

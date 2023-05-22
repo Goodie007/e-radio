@@ -1,13 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+
 .main {
   justify-content: center;
   align-items: center;
+  padding: 12rem;
   padding-top: 2rem;
-  padding-left: 10px ;
   min-height: 100vh;
+  background-color: #151723;
+  font-family: "Architects Daughter", cursive;
+  color: white
 }
 
 .audioPlayer {
-  background-color: blue;
+  background-color: #9C0D38;
 }
 
 /* Enable hover only on non-touch devices */
@@ -30,6 +36,14 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main {
+    padding-top: 2rem;
+    min-height: 100vh;
+    background-color: #151723;
+    font-family: "Architects Daughter", cursive;
+    color: black;
+    grid: none
+  }
   .content {
     padding: 4rem;
   }
