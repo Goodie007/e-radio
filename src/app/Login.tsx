@@ -38,18 +38,48 @@ export default function Login(){
         display: flex;  
         flex-direction: column;
         justify-content: space-between;
-        height: 35vh;
+        height: 42vh;
         align-items: center;
         width: 100%;
         padding-top: 5rem;
     `
+
+    const Login = styled.button`
+        border-radius: 10px;
+        box-shadow: none;
+        float: none;
+        background: linear-gradient(to bottom right, #e36bae, #fb743e);
+        background-position: center bottom, center calc(100% - 1px);
+        background-repeat: no-repeat;
+        background-size: 0 2px, 100% 1px;
+        padding: 10px;
+        transition: background 0s ease-out 0s;
+        color: #ffffff;
+        min-height: 50px;
+        display: initial;
+        width: 80%;
+        outline: none;
+        font-size: 20px;
+        font-family: "Architects Daughter", cursive;
+        &:hover {
+            background-size: 100% 2px, 100% 1px;
+            outline: 0 none;
+            transition-duration: 0.3s;
+            color: #ffffff;
+            background: linear-gradient(to bottom right, #e36bae, #fb743e);
+        }
+    `
+    
 
     return (
         <div>
             <Title>Login</Title>
             <InputWrapper>
                 <Input placeholder='Name' />
-                <Input placeholder='Password' />
+                <Input placeholder='Password' type='password' />
+                <div>Forgot password?</div>
+                <Login>Submit</Login>
+                <div>Don't have an account? sign up here</div>
             </InputWrapper>
         </div>
     )
