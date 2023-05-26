@@ -2,8 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import './radio.css'
+import { useForm } from 'react-hook-form';
 
 export default function Login(){
+    const { register, handleSubmit } = useForm();
+    const [ data, setData ] = useState("");
+
     const Title = styled.h1`
         text-align: center;
         padding-top: 0rem;
@@ -35,7 +39,7 @@ export default function Login(){
             color: #ffffff;
         }
     `
-    const InputWrapper = styled.div`
+    const InputWrapper = styled.form`
         display: flex;  
         flex-direction: column;
         justify-content: space-between;
@@ -84,9 +88,9 @@ export default function Login(){
     return (
         <div>
             <Title>Login</Title>
-            <InputWrapper>
-                <Input placeholder='Name' />
-                <Input placeholder='Password' type='password' />
+            <InputWrapper onSubmit={handleSubmit((data:any) => setData(JSON.stringify(data)))}>
+                <Input placeholder='Name' {...register("name")}  />
+                <Input placeholder='Password' type='password' {...register("password")} />
                 <div>
                     <SmallText>Forgot password?</SmallText>
                 </div>
