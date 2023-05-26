@@ -1,10 +1,12 @@
 'use client';
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.css';
+import { Provider } from 'react-redux';
 import Radio from './Radio';
 import { styled } from 'styled-components';
 import Login from './Login';
 import SignUp from './SignUp';
+import { store } from '../../components/config/store';
 
 export default function Home() {
   const Title = styled.h1`
@@ -16,8 +18,10 @@ export default function Home() {
   `;
 
   return (
-    <main className={styles.main}>
-      <SignUp />
-    </main>
+    <Provider store={store}>
+      <main className={styles.main}>
+        <SignUp />
+      </main>
+    </Provider>
   )
 }
