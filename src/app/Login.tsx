@@ -88,9 +88,9 @@ export default function Login(){
     return (
         <div>
             <Title>Login</Title>
-            <InputWrapper onSubmit={handleSubmit((data:any) => setData(JSON.stringify(data)))}>
-                <Input placeholder='Name' {...register("name")}  />
-                <Input placeholder='Password' type='password' {...register("password")} />
+            <InputWrapper>
+                <Input placeholder='Name'  />
+                <Input placeholder='Password' type='password' />
                 <div>
                     <SmallText>Forgot password?</SmallText>
                 </div>
