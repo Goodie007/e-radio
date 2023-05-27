@@ -3,10 +3,28 @@ import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import './radio.css'
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser } from '../../components/modules/authAction';
+import { ClipLoader } from 'react-spinners';
+import Link from 'next/link';
+
 
 export default function SignUp(){
     const { register, handleSubmit } = useForm();
     const [ data, setData ] = useState("");
+    const { loading, userInfo, error, success } = useSelector(
+        (state) => state.auth
+    )
+
+    const dispatch = useDispatch()
+
+    const submitAction = (data:any) => {
+        if(data.password !== data.confirmPassword){
+            alert('Password Mismatched')
+        }
+        dispatch(registerUser(data))
+        console.log("hello")
+    }
 
     const Title = styled.h1`
         text-align: center;
@@ -88,13 +106,23 @@ export default function SignUp(){
     return (
         <div>
             <Title>Sign Up</Title>
-            <InputWrapper onSubmit={handleSubmit((data:any) => setData(JSON.stringify(data)))} >
+            <InputWrapper onSubmit={handleSubmit(submitAction)} >
+                {error && <div>{error}</div>}
                 <Input placeholder='Name' {...register("name")}  />
                 <Input placeholder='Password' type='password' {...register("password")}  />
+                <Input placeholder='Confirm Password' type='password' {...register("confirmPassword")}  />
                 <div>
                     <SmallText>Sign up with google</SmallText>
                 </div>
-                <Login>Submit</Login>
+                <Login>
+                    {loading ? <ClipLoader 
+                                    color='blue' 
+                                    loading={loading}
+                                    aria-label="Loading Spinner"  
+                                /> 
+                                : 
+                            'Register'}
+                </Login>
                 <SmallText>Already have an account? <SignUp>Login</SignUp></SmallText>
             </InputWrapper>
         </div>
