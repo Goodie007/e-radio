@@ -3,10 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { styled } from 'styled-components';
 import './radio.css'
 import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login(){
     const { register, handleSubmit } = useForm();
     const [ data, setData ] = useState("");
+    const { loading, error } = useSelector(
+        (state) => state.user
+    )
+
+    const submitForm = (data:any) => {
+        dispatch(userLogin(data))
+    }
 
     const Title = styled.h1`
         text-align: center;
@@ -88,15 +96,19 @@ export default function Login(){
     return (
         <div>
             <Title>Login</Title>
-            <InputWrapper>
+            <InputWrapper onSubmit={handleSubmit(submitForm)}>
                 <Input placeholder='Name'  />
                 <Input placeholder='Password' type='password' />
                 <div>
                     <SmallText>Forgot password?</SmallText>
                 </div>
-                <Login>Login</Login>
+                <Login disabled={loading}>{loading ? "hello" : 'Login'}</Login>
                 <SmallText>Don't have an account? <SignUp> sign up here </SignUp></SmallText>
             </InputWrapper>
         </div>
     )
+}
+
+function dispatch(arg0: any) {
+    throw new Error('Function not implemented.');
 }
