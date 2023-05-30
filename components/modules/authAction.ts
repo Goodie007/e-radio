@@ -6,7 +6,7 @@ const supabase = process.env.API_BASE_URL;
 
 export const registerUser = createAsyncThunk(
     'auth/register',
-    async ( name, password , { rejectWithValue }:type) => {
+    async ( name, password , { rejectWithValue }) => {
         try {
             const config = {
                 headers: {
@@ -19,7 +19,7 @@ export const registerUser = createAsyncThunk(
                 config
             )
         } 
-        catch (error:any) {
+        catch (error) {
             // return custom error message from backend if present
             if (error.response && error.response.data.message) {
                 return rejectWithValue(error.response.data.message)

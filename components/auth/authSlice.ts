@@ -18,7 +18,7 @@ const authSlice = createSlice({
             state.loading = true
             state.error = null
         },
-        [ registerUser.fulfilled ]: (state:any, { payload }:any) => {
+        [ registerUser.fulfilled ]: (state:any, { payload }: any) => {
             state.loading = false
             state.error = payload 
         }

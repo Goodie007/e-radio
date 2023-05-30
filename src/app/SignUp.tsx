@@ -16,6 +16,8 @@ export default function SignUp(){
         (state) => state.auth
     )
 
+    console.log(loading, 'hello')
+
     const dispatch = useDispatch()
 
     const submitAction = (data:any) => {
@@ -115,13 +117,7 @@ export default function SignUp(){
                     <SmallText>Sign up with google</SmallText>
                 </div>
                 <Login>
-                    {loading ? <ClipLoader 
-                                    color='blue' 
-                                    loading={loading}
-                                    aria-label="Loading Spinner"  
-                                /> 
-                                : 
-                            'Register'}
+                    { loading? <ClipLoader /> : 'Register' }
                 </Login>
                 <SmallText>Already have an account? <SignUp>Login</SignUp></SmallText>
             </InputWrapper>
